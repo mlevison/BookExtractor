@@ -1,7 +1,8 @@
 const GOOGLE_BOOKS_API_URL = "https://www.googleapis.com/books/v1/volumes";
+const GOOGLE_BOOKS_TITLE_TERM = "intitle:"
 
 export async function queryGoogleBookAPI(title) {
-  let encodedTitle = encodeURIComponent(title);
+  let encodedTitle = encodeURIComponent(GOOGLE_BOOKS_TITLE_TERM + title);
   let finalURL = GOOGLE_BOOKS_API_URL + "?q=" + encodedTitle;
   console.log(finalURL);
   const response = await fetch(finalURL);

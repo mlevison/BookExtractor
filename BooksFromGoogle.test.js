@@ -1,6 +1,6 @@
 import { queryGoogleBookAPI } from "./BooksFromGoogle";
 
-test('Query Returns some text', () => {
-    let bookDesc = queryGoogleBookAPI("Flowers for Algernon");
+test('Query Returns some text', async () => {
+    const bookDesc = await queryGoogleBookAPI("Flowers for Algernon");
     console.log(bookDesc);
 });
