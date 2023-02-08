@@ -9,3 +9,8 @@ export async function queryGoogleBookAPI(title) {
   const data = await response.json();
   return data;
 }
+
+export async function howManyBooks(title) {
+  const data = await queryGoogleBookAPI(title);
+  return data.items.length;
+}
